@@ -21,6 +21,9 @@ pages of PostScript source. This package removes those JCL declarations, so
 jobs ship as plain PostScript starting with `%!PS-Adobe-3.0`: deterministic,
 no garbage pages.
 
+The full diagnosis, evidence trail, and build story:
+[BUILDING.md](BUILDING.md).
+
 ## Install
 
 Double-click `HP_LaserJet_P2055dn_Driver.pkg`, or run:
