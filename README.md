@@ -13,6 +13,18 @@ options (auto duplex, all trays, 600/1200 dpi, econo mode). macOS renders with
 its built-in filters and the printer's firmware does the rest. The deprecated
 Gutenprint raster driver is **not** needed.
 
+### Fix included (v1.1.0)
+
+HP's original PPD declares PJL job framing (`JCLBegin`/`JCLToPSInterpreter`/
+`JCLEnd`). macOS's print pipeline corrupts that framing — it rewrites the
+`@PJL ENTER LANGUAGE = PostScript` line as `%%@PJL ENTER LANGUAGE =
+PostScript` (an invalid PJL command), so the printer is not reliably switched
+into PostScript mode and intermittently echoes the raw PostScript stream as
+text: a single-page PDF prints as many mostly-blank pages of PostScript
+source. The packaged PPD has these JCL declarations removed, so jobs are sent
+as plain PostScript starting with `%!PS-Adobe-3.0` — deterministic language
+entry, no garbage pages.
+
 ## Install
 
 Double-click `HP_LaserJet_P2055dn_Driver.pkg`, or from a terminal:
