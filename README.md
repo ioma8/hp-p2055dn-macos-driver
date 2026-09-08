@@ -26,6 +26,8 @@ The full diagnosis, evidence trail, and build story:
 
 ## Install
 
+Download: [HP_LaserJet_P2055dn_Driver.pkg](https://github.com/ioma8/hp-p2055dn-macos-driver/raw/refs/heads/main/HP_LaserJet_P2055dn_Driver.pkg)
+
 Double-click `HP_LaserJet_P2055dn_Driver.pkg`, or run:
 
 ```sh
